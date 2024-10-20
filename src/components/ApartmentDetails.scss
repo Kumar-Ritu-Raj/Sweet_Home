@@ -1,8 +1,10 @@
+@import '../variables.scss';
+
 .apartment-details {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #d8213a;
+    background-color: $color-four;
 
     .apartment_name,
     .location,
@@ -23,7 +25,7 @@
     .apartment-details__room {
       display: flex;
       margin-bottom: 20px;
-      background-color: #b9ebf1;
+      background-color: $color-one;
     }
 
     &__room {
@@ -35,7 +37,7 @@
     
       &__room-large {
         padding: 10px;
-        background-color: #700bce;
+        background-color: $color-three;
         border: 2px solid #ccc;
         border-radius: 10px;
         min-height: 200px;
