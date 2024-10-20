@@ -1,0 +1,136 @@
+.add-apartment-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+
+  &__title {
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  &__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+
+  &__section-title {
+    font-size: 22px;
+    margin: 25px 0 15px;
+    color: #444;
+  }
+
+  &__room {
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__features {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    label {
+      margin-right: 10px;
+      font-weight: 500;
+    }
+  }
+
+  &__add-room-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  &__submit-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  .add-apartment-form__rent-details {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+
+    .add-apartment-form__label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .add-apartment-form__input {
+      margin-bottom: 10px;
+    }
+  }
+}
