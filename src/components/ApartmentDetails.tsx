@@ -3,6 +3,7 @@ import { Apartment } from "../types/Types";
 import { useLocation } from "react-router-dom";
 import "./ApartmentDetails.scss";
 import Carousel from "./Carousel.tsx";
+import ColorThemeSelector from "./ColorThemeSelector.tsx";
 
 const ApartmentDetails: React.FC = () => {
   const location = useLocation();
@@ -82,6 +83,7 @@ const ApartmentDetails: React.FC = () => {
         {apartment.facilities.lift && <li>Lift</li>}
         {apartment.facilities.powerBackup && <li>Power Backup</li>}
       </ul>
+        <ColorThemeSelector />
     </div>
   );
 };

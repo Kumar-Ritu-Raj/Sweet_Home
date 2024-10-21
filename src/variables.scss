@@ -1,5 +1,71 @@
-$color-one: #3D52A0;
-$color-two: #7091E6;
-$color-three: #8697C4;
-$color-four: #ADBBDA;
-$color-five: #EDE8F5;
+$color-set-one-primary: #3D52A0;
+$color-set-one-secondary: #7091E6;
+$color-set-one-tertiary: #8697C4;
+$color-set-one-quaternary: #ADBBDA;
+$color-set-one-quinary: #EDE8F5;
+
+$color-set-two-primary: #A03D52;
+$color-set-two-secondary: #E67091;
+$color-set-two-tertiary: #C48697;
+$color-set-two-quaternary: #DAADBB;
+$color-set-two-quinary: #F5EDE8;
+
+$color-set-three-primary: #52A03D;
+$color-set-three-secondary: #91E670;
+$color-set-three-tertiary: #97C486;
+$color-set-three-quaternary: #BBDAAD;
+$color-set-three-quinary: #E8F5ED;
+
+$color-set-four-primary: #A03DA0;
+$color-set-four-secondary: #E67091;
+$color-set-four-tertiary: #C497C4;
+$color-set-four-quaternary: #DAADDA;
+$color-set-four-quinary: #F5EDF5;
+
+@mixin theme-colors($primary, $secondary, $tertiary, $quaternary, $quinary) {
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+  --tertiary-color: #{$tertiary};
+  --quaternary-color: #{$quaternary};
+  --quinary-color: #{$quinary};
+}
+
+body[data-theme="set-one"] {
+  @include theme-colors(
+    $color-set-one-primary, 
+    $color-set-one-secondary, 
+    $color-set-one-tertiary, 
+    $color-set-one-quaternary, 
+    $color-set-one-quinary
+  );
+}
+
+body[data-theme="set-two"] {
+  @include theme-colors(
+    $color-set-two-primary, 
+    $color-set-two-secondary, 
+    $color-set-two-tertiary, 
+    $color-set-two-quaternary, 
+    $color-set-two-quinary
+  );
+}
+
+body[data-theme="set-three"] {
+  @include theme-colors(
+    $color-set-three-primary, 
+    $color-set-three-secondary, 
+    $color-set-three-tertiary, 
+    $color-set-three-quaternary, 
+    $color-set-three-quinary
+  );
+}
+
+body[data-theme="set-four"] {
+  @include theme-colors(
+    $color-set-four-primary, 
+    $color-set-four-secondary, 
+    $color-set-four-tertiary, 
+    $color-set-four-quaternary, 
+    $color-set-four-quinary
+  );
+}

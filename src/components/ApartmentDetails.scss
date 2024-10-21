@@ -4,7 +4,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: $color-four;
+    background-color: var(--quaternary-color);
 
     .apartment_name,
     .location,
@@ -25,7 +25,7 @@
     .apartment-details__room {
       display: flex;
       margin-bottom: 20px;
-      background-color: $color-one;
+      background-color: var(--primary-color);
     }
 
     &__room {
@@ -37,7 +37,7 @@
     
       &__room-large {
         padding: 10px;
-        background-color: $color-three;
+        background-color: var( --tertiary-color);
         border: 2px solid #ccc;
         border-radius: 10px;
         min-height: 200px;
