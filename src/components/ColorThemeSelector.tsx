@@ -15,48 +15,35 @@ const ColorThemeSelector: React.FC = () => {
     setSelectedTheme(event.target.value);
   };
 
+  const themes = [
+  { value: "set-one", label: "Theme 1" },
+  { value: "set-two", label: "Theme 2" },
+  { value: "set-three", label: "Theme 3" },
+  { value: "set-four", label: "Theme 4" },
+  { value: "set-five", label: "Theme 5" },
+  { value: "set-six", label: "Theme 6" },
+  { value: "set-seven", label: "Theme 7" },
+  { value: "set-eight", label: "Theme 8" },
+  { value: "set-nine", label: "Theme 9" },
+];
+
   return (
     <div className="theme-selector">
-      <span>Select Color Theme:</span>
-      <div>
-        <label>
+    <span>Select Color Theme:</span>
+    <div>
+      {themes.map((theme) => (
+        <label key={theme.value}>
           <input
             type="radio"
-            value="set-one"
-            checked={selectedTheme === "set-one"}
+            value={theme.value}
+            checked={selectedTheme === theme.value}
             onChange={handleThemeChange}
           />
-          Theme 1
+          {theme.label}
         </label>
-        <label>
-          <input
-            type="radio"
-            value="set-two"
-            checked={selectedTheme === "set-two"}
-            onChange={handleThemeChange}
-          />
-          Theme 2
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="set-three"
-            checked={selectedTheme === "set-three"}
-            onChange={handleThemeChange}
-          />
-          Theme 3
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="set-four"
-            checked={selectedTheme === "set-four"}
-            onChange={handleThemeChange}
-          />
-          Theme 4
-        </label>
-      </div>
+      ))}
     </div>
+  </div>
   );
 };
 
