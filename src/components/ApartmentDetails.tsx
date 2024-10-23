@@ -1,12 +1,14 @@
 import React from "react";
 import { Apartment } from "../types/Types";
-import { useLocation } from "react-router-dom";
-import "./ApartmentDetails.scss";
+import { useLocation, useNavigate } from "react-router-dom";
 import Carousel from "./Carousel.tsx";
 import ColorThemeSelector from "./ColorThemeSelector.tsx";
+import Button from "./Button.tsx";
+import "./ApartmentDetails.scss";
 
 const ApartmentDetails: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const apartment = location.state?.apartment as Apartment;
 
   if (!apartment) return <p>No data available</p>;
@@ -84,6 +86,7 @@ const ApartmentDetails: React.FC = () => {
         {apartment.facilities.powerBackup && <li>Power Backup</li>}
       </ul>
         <ColorThemeSelector />
+        <Button text="Back" onClick={() => navigate('/')} type="button" />
     </div>
   );
 };

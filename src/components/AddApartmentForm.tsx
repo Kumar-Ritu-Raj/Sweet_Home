@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button.tsx";
 import "./AddApartmentForm.scss";
 
 interface Room {
@@ -388,13 +389,7 @@ const AddApartmentForm: React.FC = () => {
                 </div>
               </div>
             ))}
-            <button
-              type="button"
-              onClick={() => handleAddRoom(floorIndex)}
-              className="add-apartment-form__button"
-            >
-              Add Room to Floor {floorIndex + 1}
-            </button>
+            <Button text={`Add Room to Floor ${floorIndex + 1}`} onClick={() => handleAddRoom(floorIndex)} type="submit" />
           </div>
         ))}
 
@@ -453,10 +448,7 @@ const AddApartmentForm: React.FC = () => {
             />
           </div>
         </div>
-
-        <button type="submit" className="add-apartment-form__button">
-          Submit
-        </button>
+        <Button text="Submit" onClick={()=>{}} type="submit"/>
       </form>
     </div>
   );
