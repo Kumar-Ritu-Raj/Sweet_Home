@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./AddApartmentForm.scss";
+import "./ApartmentDetails.scss";
 
 const ColorThemeSelector: React.FC = () => {
   const [selectedTheme, setSelectedTheme] = useState<string>(() => {
@@ -30,7 +30,7 @@ const ColorThemeSelector: React.FC = () => {
   return (
     <div className="theme-selector">
     <span>Select Color Theme:</span>
-    <div>
+    <div className="themes">
       {themes.map((theme) => (
         <label key={theme.value}>
           <input

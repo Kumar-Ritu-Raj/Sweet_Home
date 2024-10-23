@@ -36,7 +36,7 @@ const ApartmentDetails: React.FC = () => {
                 <div className="carousel-division">
                   <Carousel images={roomImages} />
                 </div>
-                <div>
+                <div className="rooms-division">
                   <h5>{room.roomName || `Room ${roomIndex + 1}`}</h5>
                   <p>
                     <strong>Beds:</strong> {room.beds}

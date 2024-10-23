@@ -24,16 +24,8 @@
   
     .apartment-details__room {
       display: flex;
-      margin-bottom: 20px;
       background-color: var(--primary-color);
     }
-
-    &__room {
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
-        padding: 4px;
-        border-radius: 8px;
-      }
     
       &__room-large {
         padding: 10px;
@@ -46,8 +38,21 @@
         justify-content: space-between;
       }
     
-      &__room h4 {
-        margin-top: 0;
+      &__room {
+        .rooms-division{
+          padding: 20px;
+        }
+      }
+      .theme-selector{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .themes{
+          display: flex;
+          justify-content: space-around;
+          gap: 4px;
+          flex-wrap: wrap;
+        }
       }
   }
   
