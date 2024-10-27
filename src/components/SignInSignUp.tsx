@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./SignInSignUp.scss";
+import { useNavigate } from "react-router-dom";
 
 const SignInSignUp = () => {
   const [isSignIn, setIsSignIn] = useState(true);
+  const navigate = useNavigate();
 
   const toggleForm = () => {
     setIsSignIn(!isSignIn);
@@ -52,7 +54,7 @@ const SignInSignUp = () => {
                 <i className="bx bxs-lock-alt"></i>
                 <input type="password" placeholder="Password" />
               </div>
-              <button>Sign in</button>
+              <button onClick={() => navigate('/apartment-form')} type="button">Sign in</button>
               <p>
                 <b>Forgot password?</b>
               </p>

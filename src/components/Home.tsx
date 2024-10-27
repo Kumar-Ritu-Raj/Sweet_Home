@@ -1,5 +1,8 @@
 import React from 'react';
-import Navbar from './Navbar.tsx'
+import Navbar from './Navbar.tsx';
+import ContactUs from './ContactUs.tsx';
+import About from './About.tsx';
+
 import './Home.scss';
 
 const HomePage = () => {
@@ -10,6 +13,8 @@ const HomePage = () => {
         <h2>Welcome to MyApp</h2>
         <p>Your one-stop solution for managing everything!</p>
       </div>
+      <About />
+      <ContactUs />
     </div>
   );
 };
