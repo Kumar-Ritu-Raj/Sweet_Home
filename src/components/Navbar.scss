@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--color-set-own-primary);
+  color: var(--color-set-own-quaternary);
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .navbar__item {
+      cursor: pointer;
+      color: var(--color-set-own-quaternary);
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+
+  &__login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
