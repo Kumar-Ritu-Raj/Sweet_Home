@@ -16,7 +16,7 @@ const Navbar = () => {
           <a href="/#contact">Contact</a>
         </li>
         <li>
-          <Button text="Login" onClick={() => navigate('/apartment-form')} type="button" />
+          <Button text="Login" onClick={() => navigate('/login')} type="button" />
         </li>
       </ul>
     </nav>
