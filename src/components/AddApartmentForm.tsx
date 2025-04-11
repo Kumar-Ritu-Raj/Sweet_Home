@@ -31,6 +31,8 @@ interface Facilities {
 interface Apartment {
   apartmentName: string;
   location: string;
+  email: string;
+  password: string;
   floors: { rooms: Room[] }[];
   facilities: Facilities;
 }
@@ -74,6 +76,38 @@ const AddApartmentForm: React.FC = () => {
     setFloors(newFloors);
   };
 
+  const handleFloorChange = (newFloorsCount: number) => {
+    const newFloors = [...floors];
+    if (newFloorsCount > numFloors) {
+      for (let i = numFloors; i < newFloorsCount; i++) {
+        newFloors.push({
+          rooms: [
+            {
+              roomName: "",
+              beds: 1,
+              washrooms: 1,
+              features: {
+                almirah: false,
+                ac: false,
+                balcony: false,
+                table: false,
+              },
+              monthlyRent: 0,
+              securityDeposit: 0,
+              noticePeriod: 0,
+              electricityCharges: 0,
+              maintenance: 0,
+            },
+          ],
+        });
+      }
+    } else {
+      newFloors.splice(newFloorsCount);
+    }
+    setNumFloors(newFloorsCount);
+    setFloors(newFloors);
+  };
+
   const onSubmit: SubmitHandler<Apartment> = (data) => {
     const apartmentData: Apartment = {
       ...data,
@@ -107,38 +141,6 @@ const AddApartmentForm: React.FC = () => {
     ]);
   };
 
-  const handleFloorChange = (newFloorsCount: number) => {
-    const newFloors = [...floors];
-    if (newFloorsCount > numFloors) {
-      for (let i = numFloors; i < newFloorsCount; i++) {
-        newFloors.push({
-          rooms: [
-            {
-              roomName: "",
-              beds: 1,
-              washrooms: 1,
-              features: {
-                almirah: false,
-                ac: false,
-                balcony: false,
-                table: false,
-              },
-              monthlyRent: 0,
-              securityDeposit: 0,
-              noticePeriod: 0,
-              electricityCharges: 0,
-              maintenance: 0,
-            },
-          ],
-        });
-      }
-    } else {
-      newFloors.splice(newFloorsCount);
-    }
-    setNumFloors(newFloorsCount);
-    setFloors(newFloors);
-  };
-
   return (
     <div className="add-apartment-form">
       <h2 className="add-apartment-form__title">Add New Apartment</h2>
@@ -147,7 +149,31 @@ const AddApartmentForm: React.FC = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="add-apartment-form__field">
-          <label htmlFor="apartmentName" className="add-apartment-form__label">
+          <label htmlFor="email" className="add-apartment-form__label add-apartment-form__label--required">
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="add-apartment-form__input"
+            {...register("email", { required: true })}
+          />
+        </div>
+
+        <div className="add-apartment-form__field">
+          <label htmlFor="password" className="add-apartment-form__label add-apartment-form__label--required">
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            className="add-apartment-form__input"
+            {...register("password", { required: true })}
+          />
+        </div>
+
+        <div className="add-apartment-form__field">
+          <label htmlFor="apartmentName" className="add-apartment-form__label add-apartment-form__label--required">
             Apartment Name:
           </label>
           <input
@@ -159,7 +185,7 @@ const AddApartmentForm: React.FC = () => {
         </div>
 
         <div className="add-apartment-form__field">
-          <label htmlFor="location" className="add-apartment-form__label">
+          <label htmlFor="location" className="add-apartment-form__label add-apartment-form__label--required">
             Location:
           </label>
           <input
@@ -194,7 +220,7 @@ const AddApartmentForm: React.FC = () => {
               <div key={roomIndex} className="add-apartment-form__room">
                 <label
                   htmlFor={`rooms_${floorIndex}_${roomIndex}_roomName`}
-                  className="add-apartment-form__label"
+                  className="add-apartment-form__label add-apartment-form__label--required"
                 >
                   Room Name:
                 </label>
@@ -210,7 +236,7 @@ const AddApartmentForm: React.FC = () => {
 
                 <label
                   htmlFor={`rooms_${floorIndex}_${roomIndex}_beds`}
-                  className="add-apartment-form__label"
+                  className="add-apartment-form__label add-apartment-form__label--required"
                 >
                   Beds:
                 </label>
@@ -224,60 +250,10 @@ const AddApartmentForm: React.FC = () => {
                   })}
                   min="1"
                 />
-                <label
-                  htmlFor={`rooms_${floorIndex}_${roomIndex}_noticePeriod`}
-                  className="add-apartment-form__label"
-                >
-                  Notice Period (in months):
-                </label>
-                <input
-                  type="number"
-                  id={`rooms_${floorIndex}_${roomIndex}_noticePeriod`}
-                  className="add-apartment-form__input"
-                  {...register(
-                    `floors.${floorIndex}.rooms.${roomIndex}.noticePeriod`,
-                    { required: true, min: 1 }
-                  )}
-                  min="1"
-                />
-
-                <label
-                  htmlFor={`rooms_${floorIndex}_${roomIndex}_electricityCharges`}
-                  className="add-apartment-form__label"
-                >
-                  Electricity Charges:
-                </label>
-                <input
-                  type="number"
-                  id={`rooms_${floorIndex}_${roomIndex}_electricityCharges`}
-                  className="add-apartment-form__input"
-                  {...register(
-                    `floors.${floorIndex}.rooms.${roomIndex}.electricityCharges`,
-                    { required: true, min: 0 }
-                  )}
-                  min="0"
-                />
-
-                <label
-                  htmlFor={`rooms_${floorIndex}_${roomIndex}_maintenance`}
-                  className="add-apartment-form__label"
-                >
-                  Maintenance Charges:
-                </label>
-                <input
-                  type="number"
-                  id={`rooms_${floorIndex}_${roomIndex}_maintenance`}
-                  className="add-apartment-form__input"
-                  {...register(
-                    `floors.${floorIndex}.rooms.${roomIndex}.maintenance`,
-                    { required: true, min: 0 }
-                  )}
-                  min="0"
-                />
 
                 <label
                   htmlFor={`rooms_${floorIndex}_${roomIndex}_washrooms`}
-                  className="add-apartment-form__label"
+                  className="add-apartment-form__label add-apartment-form__label--required"
                 >
                   Washrooms:
                 </label>
@@ -294,7 +270,7 @@ const AddApartmentForm: React.FC = () => {
 
                 <label
                   htmlFor={`rooms_${floorIndex}_${roomIndex}_monthlyRent`}
-                  className="add-apartment-form__label"
+                  className="add-apartment-form__label add-apartment-form__label--required"
                 >
                   Monthly Rent:
                 </label>
@@ -311,7 +287,7 @@ const AddApartmentForm: React.FC = () => {
 
                 <label
                   htmlFor={`rooms_${floorIndex}_${roomIndex}_securityDeposit`}
-                  className="add-apartment-form__label"
+                  className="add-apartment-form__label add-apartment-form__label--required"
                 >
                   Security Deposit:
                 </label>

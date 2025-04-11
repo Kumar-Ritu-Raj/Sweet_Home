@@ -24,9 +24,15 @@
 
   &__label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     color: #555;
+
+    &--required::after {
+      content: '*';
+      color: #ff4444;
+      margin-left: 0.25rem;
+    }
   }
 
   &__input {
@@ -40,6 +46,11 @@
       border-color: #007bff;
       outline: none;
       box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    &--error {
+      border-color: #ff4444;
+      background-color: #fff5f5;
     }
   }
 
@@ -116,7 +127,7 @@
     }
   }
 
-  .add-apartment-form__rent-details {
+  &__rent-details {
     margin-top: 20px;
     padding: 10px;
     background-color: #f7f7f7;
@@ -132,5 +143,23 @@
     .add-apartment-form__input {
       margin-bottom: 10px;
     }
+  }
+
+  &__error {
+    color: #ff4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  &__error-message {
+    color: #ff4444;
+    background-color: #fff5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid #ff4444;
   }
 }

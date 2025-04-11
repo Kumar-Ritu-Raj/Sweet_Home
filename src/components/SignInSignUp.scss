@@ -244,3 +244,36 @@
 .pointer {
   cursor: pointer;
 }
+
+.logged-in-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, var(--color-set-own-primary) 0%, var(--color-set-own-secondary) 100%);
+  color: var(--white);
+  padding: 2rem;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .logout-button {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--white);
+    color: var(--color-set-own-primary);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
