@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import Button from "./Button.tsx";
+import Button from "./Button";
 import "./AddApartmentForm.scss";
 
 interface Room {
