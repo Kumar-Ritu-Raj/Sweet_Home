@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar.tsx';
-import ContactUs from './ContactUs.tsx';
-import About from './About.tsx';
+import Navbar from './Navbar';
+import ContactUs from './ContactUs';
+import About from './About';
 
 import './Home.scss';
 

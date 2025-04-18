@@ -1,9 +1,9 @@
 import React from "react";
 import { Apartment } from "../types/Types";
 import { useLocation, useNavigate } from "react-router-dom";
-import Carousel from "./Carousel.tsx";
-import ColorThemeSelector from "./ColorThemeSelector.tsx";
-import Button from "./Button.tsx";
+import Carousel from "./Carousel";
+import ColorThemeSelector from "./ColorThemeSelector";
+import Button from "./Button";
 import "./ApartmentDetails.scss";
 
 const ApartmentDetails: React.FC = () => {
